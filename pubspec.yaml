@@ -1,0 +1,47 @@
+name: alubank
+description: Alura Bank.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  google_fonts: ^4.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: fonts/Raleway-VariableFont_wght.ttf
+        - asset: fonts/Raleway-Italic-VariableFont_wght.ttf
+          style: italic
+
+    - family: SF
+      fonts:
+        - asset: fonts/SF-Pro-Display-Thin.otf
+          weight: 200
+        - asset: fonts/SF-Pro-Display-Light.otf
+          weight: 400
+        - asset: fonts/SFUIDisplay-Medium.otf
+          weight: 700
+
+    - family: RobotoSlab
+      fonts:
+        - asset: fonts/RobotoSlab-VariableFont_wght.ttf
+          weight: 700
+
+  uses-material-design: true
