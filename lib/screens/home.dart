@@ -1,6 +1,9 @@
-import 'package:alubank/components/card.dart';
-import 'package:alubank/components/sections/header.dart';
+import 'package:alubank/components/sections/account_actions.dart';
+import 'package:alubank/components/sections/account_points.dart';
 import 'package:flutter/material.dart';
+
+import 'package:alubank/components/sections/header.dart';
+import 'package:alubank/components/sections/recent_activity.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -8,10 +11,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: const <Widget> [
           Header(),
-          BoxCard(boxContent: Text('Hi')),
+          RecentActivity(),
+          AccountActions(),
+          AccountPoints(),
         ],
       ),
     );

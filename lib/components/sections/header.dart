@@ -1,6 +1,6 @@
+import 'package:alubank/theme/theme_colours.dart';
+import 'package:alubank/theme/theme_typography.dart';
 import 'package:flutter/material.dart';
-
-import '../../theme/theme.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);
@@ -14,11 +14,7 @@ class Header extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end:  Alignment.bottomCenter,
-          colors: <Color> [
-            Color.fromRGBO(103, 100, 234, 1),
-            Color.fromRGBO(155, 105, 254, 1),
-            Color.fromRGBO(195, 107, 254, 1),
-          ]
+          colors: ThemeColours.headerGradient,
         ),
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
     ),
@@ -33,19 +29,15 @@ class Header extends StatelessWidget {
                 Text.rich(
                     TextSpan(
                         text: '\$',
-                      style: CustomTheme.gFonts('Raleway', 16, FontWeight.w400),
                         children: <TextSpan> [
                           TextSpan(
                             text: '200.00',
-                            style: CustomTheme.gFonts('Raleway', 28, FontWeight.w700),
+                            style: Theme.of(context).textTheme.bodyLarge,
                           ),
                         ],
                     ),
                 ),
-                Text(
-                    'Account Balance.',
-                    style: CustomTheme.gFonts('Raleway', 16, FontWeight.w400),
-                ),
+                const Text('Account Balance.',),
               ],
             ),
             const Icon(Icons.account_circle, size: 35,),
