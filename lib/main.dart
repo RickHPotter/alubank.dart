@@ -1,3 +1,4 @@
+import 'package:alubank/data/bank_http.dart';
 import 'package:flutter/material.dart';
 
 import 'data/bank_inherited.dart'; 
@@ -17,7 +18,7 @@ class AluBank extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Alubank',
       theme: purpleTheme,
-      home: BankInherited(child: const HomeScreen()),
+      home: BankInherited(child: HomeScreen(api: BankHttp().euroToReal(),)),
     );
   }
 }

@@ -18,10 +18,10 @@ class _AccountStatusState extends State<AccountStatus> {
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+            children: [
               Row(
                 children: [
                   Padding(
@@ -45,7 +45,7 @@ class _AccountStatusState extends State<AccountStatus> {
                         ),
                       ),
                       Text(
-                        '\$${BankInherited.of(context).values.spent}',
+                        '£ ${BankInherited.of(context).values.spent}',
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ],
@@ -75,7 +75,7 @@ class _AccountStatusState extends State<AccountStatus> {
                         ),
                       ),
                       Text(
-                        '\$${BankInherited.of(context).values.earned}',
+                        '£ ${BankInherited.of(context).values.earned}',
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ],
@@ -89,7 +89,7 @@ class _AccountStatusState extends State<AccountStatus> {
             child: Text('Spending Limit: £ 1000.00'), // desafio pode ser criar a função que limita deposito e transação baseado nesse limite. E TESTAR
           ),
           Row(
-            children: <Widget>[
+            children: [
               Expanded(
                 child: Container(
                   clipBehavior: Clip.hardEdge,

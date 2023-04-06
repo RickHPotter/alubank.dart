@@ -6,18 +6,19 @@ import '../components/sections/account_actions.dart';
 import '../components/sections/account_points.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key, required this.api}) : super(key: key);
+  final Future<String> api;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-            children: const [
-              Header(),
-              RecentActivity(),
-              ActionsSection(),
-              PointsExchange(),
+            children: [
+              Header(api: api,),
+              const RecentActivity(),
+              const ActionsSection(),
+              const PointsExchange(),
             ],
           ),
       ),

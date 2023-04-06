@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 
-
 @GenerateMocks([BankHttp])
 
 class BankHttp {

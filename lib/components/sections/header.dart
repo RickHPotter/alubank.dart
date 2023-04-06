@@ -1,11 +1,11 @@
 import 'package:alubank/theme/theme_colours.dart';
 import 'package:flutter/material.dart';
 
-import '../../data/bank_http.dart';
 import '../../data/bank_inherited.dart';
 
 class Header extends StatefulWidget {
-  const Header({Key? key}) : super(key: key);
+  const Header({Key? key, required this.api}) : super(key: key);
+  final Future<String> api;
 
   @override
   State<Header> createState() => _HeaderState();
@@ -36,10 +36,10 @@ class _HeaderState extends State<Header> {
                 children: [
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
+                    children: [
                       Text.rich(
                         TextSpan(
-                          text: '£',
+                          text: '£ ',
                           children: <TextSpan>[
                             TextSpan(
                                 text: BankInherited.of(context)
@@ -50,26 +50,24 @@ class _HeaderState extends State<Header> {
                           ],
                         ),
                       ),
-                      const Text('Available balance'),
+                      const Text('Available Balance'),
                     ],
                   ),
                   FutureBuilder(
-                      future: BankHttp().euroToReal(),
+                      future: widget.api,
                       builder: (context, snapshot) {
                         switch (snapshot.connectionState) {
                           case ConnectionState.none:
-                            return const CircularProgressIndicator();
                           case ConnectionState.waiting:
-                            return const CircularProgressIndicator();
                           case ConnectionState.active:
-                            // TODO: Handle this case.
+                            return const CircularProgressIndicator();
                           case ConnectionState.done:
                             return Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text.rich(
                                   TextSpan(
-                                    text: 'R\$',
+                                    text: 'R\$ ',
                                     children: <TextSpan>[
                                       TextSpan(
                                           text: snapshot.data.toString(),

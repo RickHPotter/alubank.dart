@@ -19,16 +19,16 @@ class _AccountPointsState extends State<AccountPoints> {
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 4.0),
             child: Text(
-              'Total points:',
+              'Total Points',
               style: Theme.of(context).textTheme.labelLarge,
             ),
           ),
           Text(
-            BankInherited.of(context).values.points.toString(),
+            BankInherited.of(context).values.points.toInt().toString(),
             style: Theme.of(context).textTheme.bodyLarge,
           ),
           Padding(
